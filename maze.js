@@ -15,10 +15,11 @@ function fail(){
 		bs[x].classList.add("youlose");
 	}
 	nohit = false;
+	
 }
 function win(){
 	if (nohit === true){
-		alert("You win!");
+		document.getElementById("status").textContent = "You win!";
 	}
 }
 function reset(){
@@ -26,5 +27,8 @@ function reset(){
 	for (var x = 0; x < bs.length; x++){
 		bs[x].classList.remove("youlose");
 	}
+	nohit = true;
+	document.getElementById("status").textContent = "Move your mouse over the \"S\" to begin.";
+	
 }
 	
