@@ -1,14 +1,15 @@
 // JavaScript Document
-window.onload = go;
+window.onload = main;
 var nohit = true;
-function go(){
+function main(){
 	var bs = document.querySelectorAll(".boundary");
 	for(var x= 0; x < bs.length; x++){
-		bs[x].addEventListener("mouseover", modify);
+		bs[x].addEventListener("mouseover", fail);
 	}
 	document.getElementById("end").addEventListener("mouseover", win);	
+	document.getElementById("start").addEventListener("click",reset);
 }
-function modify(){
+function fail(){
 	var bs = document.getElementsByClassName("boundary");
 	for( var x = 0; x < bs.length; x++){
 		bs[x].classList.add("youlose");
@@ -18,6 +19,12 @@ function modify(){
 function win(){
 	if (nohit === true){
 		alert("You win!");
+	}
+}
+function reset(){
+	var bs = document.querySelectorAll(".boundary");
+	for (var x = 0; x < bs.length; x++){
+		bs[x].classList.remove("youlose");
 	}
 }
 	
