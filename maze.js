@@ -10,6 +10,7 @@ function main(){
 	document.getElementById("start").addEventListener("click",reset);
 }
 function fail(){
+	document.getElementById("status").textContent ="You lose";
 	var bs = document.getElementsByClassName("boundary");
 	for( var x = 0; x < bs.length; x++){
 		bs[x].classList.add("youlose");
