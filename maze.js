@@ -1,6 +1,10 @@
 // JavaScript Document
-window.onload = main;
+window.onload = starter;
 var nohit = true;
+
+function starter(){
+	document.getElementById("start").addEventListener("click",main);
+}
 function main(){
 	var bs = document.querySelectorAll(".boundary");
 	for(var x= 0; x < bs.length; x++){
@@ -8,6 +12,7 @@ function main(){
 	}
 	document.getElementById("end").addEventListener("mouseover", win);	
 	document.getElementById("start").addEventListener("click",reset);
+	document.getElementById("start").addEventListener("click",anticheat);
 }
 function fail(){
 	document.getElementById("status").textContent ="You lose";
@@ -29,7 +34,10 @@ function reset(){
 		bs[x].classList.remove("youlose");
 	}
 	nohit = true;
-	document.getElementById("status").textContent = "Move your mouse over the \"S\" to begin.";
+	document.getElementById("status").textContent = "Click the \"S\" to begin";
 	
+}
+function anticheat(){
+	document.getElementById("maze").addEventListener("mouseleave",fail);
 }
 	
